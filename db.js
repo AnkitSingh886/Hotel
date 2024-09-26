@@ -1,8 +1,9 @@
 const mongoose=require('mongoose')
-const mongoURL="mongodb://localhost:27017/ankit"
-
+require('dotenv').config();
+//const mongoURL="mongodb://localhost:27017/ankit"
+const mongoURL=process.env.dbURL;
 mongoose.connect(mongoURL)
-
+ 
 //mongoose maintains a default connection object representing the mongodb connection
 const db=mongoose.connection;
 
